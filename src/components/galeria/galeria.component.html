@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h3>{{ title }}</h3>
+  <div *ngIf="fotos.length > 0">
+    <img [src]="fotos[fotoAtual]" alt="" style="margin: 2rem" width="100%" />
+    <div style="margin: 1rem; display: flex; justify-content: center">
+      <p style="margin: 1rem">Foto{{ fotoAtual + 1 }} de {{ fotos.length }}</p>
+      <button (click)="primeiraFoto()" [disabled]="fotoAtual == primeiro()">
+        |<
+      </button>
+      <button (click)="anterior()" [disabled]="fotoAtual == primeiro()">
+        <
+      </button>
+      <button (click)="proxima()" [disabled]="fotoAtual == ultima()">></button>
+      <button (click)="retornar()" [disabled]="fotoAtual == ultima()">
+        |>
+      </button>
+    </div>
+  </div>
+</div>
